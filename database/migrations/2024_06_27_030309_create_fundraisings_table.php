@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('fundraisings', function (Blueprint $table) {
             $table->id();
             $table->foreignId('fundraiser_id')->constrained()->onDelete('cascade');
-            $table->foreignId('category_id')->constrained()->onDelete('cascade');
+            $table->foreignId('program_id')->constrained()->onDelete('cascade');
             $table->boolean('is_active');
             $table->boolean('has_finished');
             $table->string('name');

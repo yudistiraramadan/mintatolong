@@ -12,7 +12,7 @@ class Fundraising extends Model
     use HasFactory, SoftDeletes;
     protected $fillable = [
         'fundraiser_id',
-        'category_id',
+        'program_id',
         'is_active',
         'has_finished',
         'name',
@@ -23,8 +23,8 @@ class Fundraising extends Model
     ];
 
     // ORM
-    public function category(){ 
-        return $this->belongsTo(Category::class);
+    public function program(){ 
+        return $this->belongsTo(Program::class);
     }
 
     public function fundraiser(){

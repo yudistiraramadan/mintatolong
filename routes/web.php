@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DonaturController;
 use App\Http\Controllers\FundraiserController;
@@ -8,7 +8,7 @@ use App\Http\Controllers\FundraisingController;
 use App\Http\Controllers\FundraisingPhasesController;
 use App\Http\Controllers\FundraisingWithdrawalController;
 use App\Http\Controllers\ProfileController;
-use App\Models\Category;
+use App\Models\Program;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -31,8 +31,8 @@ Route::middleware('auth')->group(function () {
 
     // Owner 
         Route::prefix('admin')->name('.admin')->group(function(){ 
-        Route::resource('categories', CategoryController::class)
-        ->middleware('role:owner');
+        Route::resource('program', ProgramController::class);
+        // ->middleware('role:owner');
 
         Route::resource('donaturs', DonaturController::class)
         ->middleware('role:owner');
